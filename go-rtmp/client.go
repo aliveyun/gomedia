@@ -4,7 +4,7 @@ import (
 	"encoding/binary"
 	"errors"
 	"strings"
-
+	"net"
 	"github.com/aliveyun/gomedia/go-codec"
 	"github.com/aliveyun/gomedia/go-flv"
 )
@@ -48,6 +48,7 @@ type RtmpClient struct {
 	streamId       uint32
 	writeChunkSize uint32
 	isPublish      bool
+	conn   net.Conn 
 }
 
 func NewRtmpClient(options ...func(*RtmpClient)) *RtmpClient {
