@@ -411,7 +411,7 @@ func skip_hrd_parameters(cprms_present_flag uint8, max_sub_layers_minus1 uint32,
         if low_delay_hrd_flag == 0 {
             cpb_cnt_minus1 = uint32(bs.ReadUE())
             if cpb_cnt_minus1 > 31 {
-                panic("cpb_cnt_minus1 > 31")
+                //panic("cpb_cnt_minus1 > 31")
             }
         }
         skip_sub_layer_hrd_parameters := func() {

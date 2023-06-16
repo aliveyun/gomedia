@@ -28,7 +28,7 @@ func (cc *RtmpClient) ConnectServer(rtmpUrl string) (err error) {
 		fmt.Println("connect failed", err)
 		return err
 	}
-
+	cc.conn=c
 	cc.SetOutput(func(data []byte) error {
 		_, err := c.Write(data)
 		return err
@@ -55,7 +55,6 @@ func (cc *RtmpClient) Monitor(c net.Conn) {
 		//client.Signals <- SignalStreamStop
 	}()
 	var err error
-
 	buf := make([]byte, 4096)
 	n := 0
 	for err == nil {
