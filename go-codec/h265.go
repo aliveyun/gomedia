@@ -414,7 +414,7 @@ func skip_hrd_parameters(cprms_present_flag uint8, max_sub_layers_minus1 uint32,
                 //panic("cpb_cnt_minus1 > 31")
             }
         }
-        skip_sub_layer_hrd_parameters := func() {
+        /*skip_sub_layer_hrd_parameters := func() {
             for i := 0; i < int(cpb_cnt_minus1); i++ {
                 bs.ReadUE()
                 bs.ReadUE()
@@ -430,7 +430,7 @@ func skip_hrd_parameters(cprms_present_flag uint8, max_sub_layers_minus1 uint32,
         }
         if vcl_hrd_parameters_present_flag == 1 {
             skip_sub_layer_hrd_parameters()
-        }
+        }*/
     }
 }
 
